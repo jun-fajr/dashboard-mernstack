@@ -1,9 +1,9 @@
+import express from "express";
 import bodyParser from "body-parser";
+import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import express from "express";
 import helmet from "helmet";
-import mongoose from "mongoose";
 import morgan from "morgan";
 import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
@@ -36,13 +36,5 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-
-    /* ONLY ADD DATA ONE TIME */
-    // AffiliateStat.insertMany(dataAffiliateStat);
-    // OverallStat.insertMany(dataOverallStat);
-    // Product.insertMany(dataProduct);
-    // ProductStat.insertMany(dataProductStat);
-    // Transaction.insertMany(dataTransaction);
-    // User.insertMany(dataUser);
   })
   .catch((error) => console.log(`${error} did not connect`));
